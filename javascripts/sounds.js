@@ -17,11 +17,16 @@ var init = function(){
 	circle.y = 100;
 	stage.addChild(circle);
 
+	var circle2 = new createjs.Shape();
+	circle2.graphics.beginFill('#F471EA').drawCircle(20,20,25);
+	circle2.x = 20;
+	circle2.y = 20;
+	stage.addChild(circle2);
+
 	var square = new createjs.Shape();
 	square.graphics.beginFill('#A8B4DA').drawRect(10,10,100,90);
 
-	stage.addChild(circle);
-	stage.addChild(square);
+	// stage.addChild(square);
 
 	createjs.Tween.get(square, {loop: true})
 					.to({ x: 800 }, 1000, createjs.Ease.getPowInOut(4) )
@@ -32,6 +37,10 @@ var init = function(){
 	createjs.Tween.get(circle, {loop: true})
 					.to({ x: 500 }, 1500, createjs.Ease.getPowInOut(2))
 					.to({ x: 100 }, 1500, createjs.Ease.getPowInOut(2));
+
+	createjs.Tween.get(circle2, {loop: true})
+					.to({ x: 500 }, 1500, createjs.Ease.getPowInOut(9))
+					.to({ x: 20 }, 1500, createjs.Ease.getPowInOut(9));
 
 	createjs.Ticker.setFPS(60);
 	createjs.Ticker.addEventListener("tick", stage);
