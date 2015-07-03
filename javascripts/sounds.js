@@ -24,23 +24,23 @@ var init = function(){
 	stage.addChild(circle2);
 
 	var square = new createjs.Shape();
-	square.graphics.beginFill('#A8B4DA').drawRect(10,10,100,90);
+	square.graphics.beginFill('#A8B4DA').drawRect(10,120,20,20);
 
-	// stage.addChild(square);
+	stage.addChild(square);
 
 	createjs.Tween.get(square, {loop: true})
 					.to({ x: 800 }, 1000, createjs.Ease.getPowInOut(4) )
-					.to({ y:  300}, 500, createjs.Ease.getPowInOut(2) )
-					.to({ x: 0 }, 500, createjs.Ease.getPowInOut(4) )
-					.to({ y: 0 }, 800, createjs.Ease.getPowInOut(2));
+					// .to({ y:  300}, 500, createjs.Ease.getPowInOut(2) )
+					// .to({ x: 0 }, 500, createjs.Ease.getPowInOut(4) )
+					.to({ x: 10 }, 800, createjs.Ease.getPowInOut(2));
 
 	createjs.Tween.get(circle, {loop: true})
 					.to({ x: 500 }, 1500, createjs.Ease.getPowInOut(2))
 					.to({ x: 100 }, 1500, createjs.Ease.getPowInOut(2));
 
 	createjs.Tween.get(circle2, {loop: true})
-					.to({ x: 500 }, 1500, createjs.Ease.getPowInOut(9))
-					.to({ x: 20 }, 1500, createjs.Ease.getPowInOut(9));
+					.to({ x: 500 }, 1500, createjs.Ease.getPowInOut(2))
+					.to({ x: 20 }, 1500, createjs.Ease.getPowInOut(2));
 
 	createjs.Ticker.setFPS(60);
 	createjs.Ticker.addEventListener("tick", stage);
